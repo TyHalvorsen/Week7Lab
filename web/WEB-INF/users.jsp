@@ -19,9 +19,12 @@
            
             <input  class="input"type="password" name="password" placeholder="Password"><br>
            
-            <button type="button" value="System Admin">System Admin</button>
-            <button type="button" value="System Regular User">Regular User</button>
-            <button type="button" value="System Company Admin">Company Admin</button>
+            <select class="dropdown" name="roles" id="roles">
+                <option value="System Admin">Admin</option>
+                <option value="User">User</option>
+                <option value="Com Admin">Company ADmin</option>
+            </select>
+            <a class="checkbox">select<input class="checkbox" type="checkbox" name="select"></a>
             <br>
             <input type="submit" name="Add" value="Add" id="saveBtn" style=""><br>
         </form>
@@ -51,7 +54,7 @@
                                 ${user.getLastname()}
                             </td>
                             <td class="manage">
-                                <a href="edit?action=edit&email=${user.getEmail()}" style="" id="edit"></a> 
+                                <a href="edit?action=edit&email=${user.getEmail()}" id="edit"></a> 
                                 <a href="delete?action=delete&email=${user.getEmail()}"></a> 
                             </td>
                         </tr>
@@ -61,15 +64,14 @@
         
             
                 <form method="post" action="users">
-                    <h1 class="headers" style="" >Edit Users</h1>
                     <input class="input"type="email" placeholder="Email" name="emailEdit" value="${emailEdit}" readonly=""><br>
                     <input class="input"type="text" placeholder="First Name" name="firstnameEdit" value="${firstnameEdit}" > <br>
                     <input class="input"type="text"placeholder="Last Name" name="lastnameEdit" value="${lastnameEdit}"><br>
                     <input class="input"type="password"placeholder="Password" name="passwordEdit" value="${passwordEdit}"><br>
-                    <select class='button' name="roleEdit" id="roles" value="${buttonEdit}">
+                    <select class='dropdown' name="roleEdit" id="roles" value="${dropdownEdit}">
                         <button type="button" value="System Admin">System Admin</button>
                         <button type="button" value="System Regular User">Regular User</button>
-                        <button type="button" value="System Company Admin">Company Admin</button>
+                        <button type="button" value="System Company Admin">Company ADmin</button>
                     </select>
                         <br>
                     <a class="checkbox" name="activeEdit" style="">Active<input style="" class="checkbox" type="checkbox" name="activeEdit" placeholder="" value=""></a> 
