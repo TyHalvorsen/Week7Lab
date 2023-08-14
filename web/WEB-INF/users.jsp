@@ -69,9 +69,9 @@
                     <input class="input"type="text"placeholder="Last Name" name="lastnameEdit" value="${lastnameEdit}"><br>
                     <input class="input"type="password"placeholder="Password" name="passwordEdit" value="${passwordEdit}"><br>
                     <select class='dropdown' name="roleEdit" id="roles" value="${dropdownEdit}">
-                        <button type="button" value="System Admin">System Admin</button>
-                        <button type="button" value="System Regular User">Regular User</button>
-                        <button type="button" value="System Company Admin">Company ADmin</button>
+                        <option value="System Admin">Admin</option>
+                        <option value="User">User</option>
+                        <option value="Com Admin">Company ADmin</option>
                     </select>
                         <br>
                     <a class="checkbox" name="activeEdit" style="">Active<input style="" class="checkbox" type="checkbox" name="activeEdit" placeholder="" value=""></a> 
