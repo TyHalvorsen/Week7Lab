@@ -19,18 +19,13 @@
            
             <input  class="input"type="password" name="password" placeholder="Password"><br>
            
-            <select  class="dropdown" name="roles" id="roles">
-                <option value="System Admin">System Admin</option>
-                <option value="Regular User">Regular User</option>
-                <option value="Company Admin">Company Admin</option>
-            </select><br>
-            <a class="checkbox" style="">Active<input style="" class="checkbox" type="checkbox" name="active" placeholder="" value=""></a> <br>
+            <button type="button" value="System Admin">System Admin</button>
+            <button type="button" value="System Regular User">Regular User</button>
+            <button type="button" value="System Company Admin">Company Admin</button>
+            <br>
             <input type="submit" name="Add" value="Add" id="saveBtn" style=""><br>
         </form>
-        <br>
-        <h1 id="error">${errorMessage}</h1>
-        <br>
-        <div class="column">
+        
             <table class="manage">
                 <tr style="">
                     <td style="">Role</th>
@@ -43,19 +38,19 @@
             <c:forEach items="${users}" var="user">
                 <c:if test="${user.getActive()}">
                         <tr style="color: white" >
-                            <td class="manage" style="width: 20%;">
+                            <td class="manage">
                                 ${user.getRole()}
                             </td>
-                            <td class="manage" style="width: 20%;">
+                            <td class="manage">
                                 ${user.getEmail()}
                             </td>
-                            <td class="manage" style="width: 20%;">
+                            <td class="manage">
                                 ${user.getFirstname()}
                             </td>
-                            <td class="manage" style="width: 20%;">
+                            <td class="manage">
                                 ${user.getLastname()}
                             </td>
-                            <td class="manage" style="width: 20%;">
+                            <td class="manage">
                                 <a href="edit?action=edit&email=${user.getEmail()}" style="" id="edit"></a> 
                                 <a href="delete?action=delete&email=${user.getEmail()}"></a> 
                             </td>
@@ -63,19 +58,18 @@
                     </c:if>
                 </c:forEach>
             </table>
-        </div>
-        <div class="column">
-            <div class="card">
+        
+            
                 <form method="post" action="users">
                     <h1 class="headers" style="" >Edit Users</h1>
                     <input class="input"type="email" placeholder="Email" name="emailEdit" value="${emailEdit}" readonly=""><br>
                     <input class="input"type="text" placeholder="First Name" name="firstnameEdit" value="${firstnameEdit}" > <br>
                     <input class="input"type="text"placeholder="Last Name" name="lastnameEdit" value="${lastnameEdit}"><br>
                     <input class="input"type="password"placeholder="Password" name="passwordEdit" value="${passwordEdit}"><br>
-                    <select class='dropdown' name="roleEdit" id="roles" value="${dropdownEdit}">
-                        <option value="System Admin">System Admin</option>
-                        <option value="Regular User">Regular User</option>
-                        <option value="Company Admin">Company Admin</option>
+                    <select class='button' name="roleEdit" id="roles" value="${buttonEdit}">
+                        <button type="button" value="System Admin">System Admin</button>
+                        <button type="button" value="System Regular User">Regular User</button>
+                        <button type="button" value="System Company Admin">Company Admin</button>
                     </select>
                         <br>
                     <a class="checkbox" name="activeEdit" style="">Active<input style="" class="checkbox" type="checkbox" name="activeEdit" placeholder="" value=""></a> 
@@ -84,13 +78,5 @@
                     <br>
                     <input type="submit"name="cancel" value="Cancel" id="cancelBtn">
                     <br>
-                </form>
-                <h1>
-                    ${errorMessage}
-                </h1>
-
-            </div>
-        </div>
-        </div>
     </body>
 </html>
